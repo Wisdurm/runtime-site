@@ -1,0 +1,30 @@
+.main {
+	width: 100%;
+	vertical-align: top;
+}
+
+table.nav td {
+	border-width: 0;
+}
+
+table.nav {
+	padding-left: 32px;
+	border-spacing: 0pt;
+}
+
+table.nav td {
+}
+
+table.navitem {
+	width: 100%;
+}
+
+table.navitem tr:nth-child(1) {
+	color: white;
+	background-color: orange;
+	font-weight: bold;
+	white-space: nowrap; /* Don't get cutoff */
+}
+table.navitem tr:nth-child(2) {
+	background-color: wheat;
+}
