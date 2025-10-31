@@ -1,6 +1,26 @@
+html {
+	color: #30291c;
+}
+
+.copyright {
+	background-color: wheat;
+	padding: 10px;
+}
+
+
+
 .main {
 	width: 100%;
 	vertical-align: top;
+}
+
+td {
+	padding: 6px;
+}
+
+dt {
+	font-weight:bold;
+	margin-bottom: 5px;
 }
 
 table.nav td {
