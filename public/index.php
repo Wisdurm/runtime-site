@@ -4,14 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
-	<title>Document</title>
+	<title>Index</title>
 </head>
 <body>
 	<table>
 		<tr>
 		<!-- Main -->
 		<td class="main">
-			<img src="../images/runtime.svg">
+			<a href="/public/index.php"><img src="../images/runtime.svg"></a>
 			<table class="navitem">
 				<tr><td>
 						About
@@ -19,7 +19,7 @@
 				<tr><td>
 					<b>Runtime</b> is a questionably-evaluated, classless yet purely-object-oriented, interpreted programming language.
 					<br>
-					The language was developed as just a fun little project, made for fun and learning, rather than actually being fuctional.
+					The language was developed as just a fun little project, made for fun and learning, rather than actually being functional.
 					<br>
 					Nontheless, I have made this site to serve as a hub for documentation related to Runtime, and also to pratice web development :P
 				</td></tr>

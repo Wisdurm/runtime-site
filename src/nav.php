@@ -6,11 +6,11 @@
 	</tr>
 	<tr>
 		<td>
-			<a>Who?</a>
+			<a href="about.php">Who?</a>
 			<br>
-			<a>What?</a>
+			<a href="about.php">What?</a>
 			<br>
-			<a>Why?</a>
+			<a href="about.php">Why?</a>
 		</td>
 	</tr>
 	</table>
@@ -22,9 +22,9 @@
 		</tr>
 		<tr>
 			<td>
-				<a>Installation</a>
+				<a href="installation.php">Installation</a>
 				<br>
-				<a>Getting started</a>
+				<a href="getting_started.php">Getting started</a>
 				<br>
 				<a>Reference</a>
 			</td>
