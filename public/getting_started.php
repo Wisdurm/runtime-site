@@ -12,6 +12,9 @@
 		<!-- Main -->
 		<td class="main">
 			<a href="/public/index.php"><img src="../images/runtime.svg"></a>
+			<br>
+			This documentation is, just like Runtime, still a work in progress. While it is technically done, I have no doubts that people
+			will be able to find problems with it. If you notice something is awry, don't hesitate to create an issue on the runtime-site github page.
 			<table class="navitem">
 				<tr><td>
 						Getting started
@@ -61,7 +64,7 @@
 						This might leave you with some questions. If str is an object, then what are values?
 						<br>
 						The answer is quite simple, the literal, which is assigned to str, IS the value. In this case the str object
-						acts as a short of shield for the literal, as values cannot exist by themselves in Runtime.
+						acts as a short of container for the literal, as values cannot exist by themselves in Runtime.
 					</p>
 				</td></tr>
 			</table>
@@ -93,7 +96,7 @@
 	Print(str-0)
 	# This also prints Greetings
 						</pre>
-						Every member with a string key also has an int key, however this is not true the other way around.
+						Every member with a string key also has an int key, however this is not necessarily true the other way around.
 					</p>
 				</td></tr>
 			</table>
@@ -108,7 +111,7 @@
 	int # This creates an empty object called int
 						</pre>
 						If you want to give objects members, this can be done using either the <code>Object()</code>
-						or <code>Assign</code>.
+						or <code>Assign()</code> functions.
 					</p>
 					<p>
 						<code>Object()</code> will simply assign new members by giving them incrementing unique int keys.
@@ -120,7 +123,50 @@
 			</table>
 			<table class="navitem">
 				<tr><td>
-						Functions and questionable-evaluation
+						Evaluation
+				</td></tr>
+				<tr><td>
+					<p>
+						Look at the following snippet of code
+						<pre>
+Object(i Input()) # Assign user input to the variable i
+Print("Hello")
+Print(i)
+						</pre>
+						How would you assume the control flow would work?
+						<figure>
+							<img src="/images/term3.png">
+							<figcaption>
+								Surprisingly enough, we see the "Hello" message <em>before</em> we are asked for input.
+							</figcaption>
+						</figure>
+						Why does this happen?
+					</p>
+					<p>
+						The answer is lazy-evaluation, or as I call it in Runtime, questionable-evaluation.
+						Lazy-evaluation means that values are only evaluated when needed. For exaple, in Haskell
+						you may assign the numbers 0-infinity to an array. While in most languages this would be
+						impossible, Haskell allows this because it will only evaluate the numbers when you ask it to.
+					</p>
+					<p>
+						This is also how it works in Runtime. In the code snippet above, while i is assigned the value of <code>Input()</code>
+						before "Hello" is printed, we only access it's value later in the line <code>Print(i)</code>.
+						The <code>Print()</code> function will evaluate it's arguments, in order to print them.
+					</p>
+					<p>
+						However if you're a Haskell aficionado, you may see a problem with this: Runtime is not purely functional, which
+						means functions can have side effects. This is where the "questionable" part comes in.
+						It is entirely possible, that the return value of a function has changed in the time it took between assigning it
+						to a variable and actually evaluating it.
+					</p>
+					<p>
+						This is simply one of the things you will have to keep in mind when writing code in Runtime.
+					</p>
+				</td></tr>
+			</table>
+			<table class="navitem">
+				<tr><td>
+						Functions
 				</td></tr>
 				<tr><td>
 				</td></tr>
@@ -128,13 +174,6 @@
 			<table class="navitem">
 				<tr><td>
 						References and values
-				</td></tr>
-				<tr><td>
-				</td></tr>
-			</table>
-			<table class="navitem">
-				<tr><td>
-						Evaluation
 				</td></tr>
 				<tr><td>
 				</td></tr>
