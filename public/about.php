@@ -48,13 +48,8 @@
 			</table>
 		</td>
 		<!-- Nav -->
-		<td>
-			<table>
-				<tr><td>
-				<?php include "../src/nav.php"; ?>
-				</td></tr>
-			</table>
-		</td>
+		<?php include "../src/nav.php"; ?>
+	</table>
 	<div class="copyright">
 		This page is licensed under the CC0-1.0 license. You are free to use the source code of this site however you want,
 		even without any attribution. The source code is available at <a href="https://github.com/Wisdurm/runtime-site">my Github</a>

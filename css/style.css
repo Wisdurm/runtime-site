@@ -21,6 +21,13 @@ dt {
 	margin-bottom: 5px;
 }
 
+.top {
+	vertical-align: top;
+}
+
+table, td, tr {
+}
+
 table.nav td {
 	border-width: 0;
 }

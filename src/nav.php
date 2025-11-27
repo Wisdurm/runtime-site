@@ -1,18 +1,19 @@
-<table class="navitem">
-	<tr>
-		<td>
-			About Runtime
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<a href="/public/about.php">Who?</a>
-			<br>
-			<a href="/public/about.php">What?</a>
-			<br>
-			<a href="/public/about.php">Why?</a>
-		</td>
-	</tr>
+<td class="top">
+	<table class="navitem">
+		<tr>
+			<td>
+				About Runtime
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="/public/about.php">Who?</a>
+				<br>
+				<a href="/public/about.php">What?</a>
+				<br>
+				<a href="/public/about.php">Why?</a>
+			</td>
+		</tr>
 	</table>
 	<table class="navitem">
 		<tr>
@@ -58,4 +59,4 @@
 			</td>
 		</tr>
 	</table>
-</table>
+</td>
