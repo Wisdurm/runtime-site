@@ -3,10 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="stylesheet" type="text/css" href="/css/style.css"> <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"> <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
 	<title>Getting started</title>
 </head>
@@ -110,7 +107,7 @@
 				</td></tr>
 				<tr><td>
 					<p>
-						Objects can be created simply referring to them
+						Objects can be created simply by referring to them
 						<pre>
 	int # This creates an empty object called int
 						</pre>
@@ -118,6 +115,7 @@
 						or <code>Assign()</code> functions.
 					</p>
 					<p>
+						TODO: object doesnt evaluate, assign does
 						<code>Object()</code> will simply assign new members by giving them incrementing unique int keys.
 						<br>
 						<code>Assign()</code> will assign a value to a specific member. This allows you to change existing values,
@@ -170,9 +168,90 @@ Print(i)
 			</table>
 			<table class="navitem">
 				<tr><td>
+						A quirk of evaluation
+				</td></tr>
+				<tr><td>
+					<p>
+						In order to understand evaluation fully, you will need to be aware of the specific mechanisms behind
+						how it works.
+					</p>
+					<p>
+						In the last chapter we went over how an object with a single value is evaluated. However what if an object
+						has multiple members? In that case the <strong> member which was lasted assigned to</strong> will be evaluated.
+					</p>
+					<p>
+						<figure>
+							<img src="/images/term4.png">
+							<figcaption>
+								When we first print <code>obj</code>, it will result in "I love you :D", as that is the last member it
+								was assigned. The next time however, it will print "I no longer hate you :)", since the first member
+								had been assigned to again.
+							</figcaption>
+						</figure>
+						As showcased above, the <em>index</em> of a member doesn't necessarily have anything to do with when it was last assigned to.
+					</p>
+				</td></tr>
+			</table>
+			<table class="navitem">
+				<tr><td>
 						Functions
 				</td></tr>
 				<tr><td>
+					<p>
+						In the last chapters, we went over evaluation. However in order for Runtime to be langauge that can actually be used for
+						anything, there needs to be a second mechanism for evaluating objects. That mechanism is <strong> calling </strong>.
+					</p>
+					<p>
+						Every object can be both <b>evaluated</b> and <b>called</b>, and in principle they are not so different from eachother.
+						While evaluating an object will... evaluate it's last assigned to member, calling an object will evaluate all of an objects
+						members in order of assignment, before returning the last one.
+					</p>
+					<p>
+						This, however, is where things start to get difficult. While the basic concept of functions is what was just described,
+						there are quite a lot of quirks in the implementation which make things harder. For example, evaluating an object or its value
+						will write the objects value to memory, whereas calling it will not. Heres an example to try to help you understand.
+						<figure>
+							<img src="/images/term5.png">
+							<figcaption>
+								The first time we print <code>a</code>, it will evaluate its <code>Print("Hello")</code> member, thereby calling it.
+								It will then return 0, which is the value actually printed by the top level print statement.
+								The second time we print <code>a</code> however, it will only print 0.
+								This is because the value of <code>Print("Hello")</code> has already been evaluated, and since it returned a value of 0,
+								that is what was written to memory, and thus its what is returned the second time a is evaluated.
+							</figcaption>
+						</figure>
+						<figure>
+							<img src="/images/term6.png">
+							<figcaption>
+								In this case we have a similar setup: the object <code>b</code> is identical to the object <code>a</code>.
+								However, instead of printing the value of <code>b</code>, we <b>call</b> <code>b</code>, which will only evaluate its
+								member. However, calling an object does not write the evaluated values down, meaning we can call the <code>b</code>
+								object as many times as we want.
+							</figcaption>
+						</figure>
+					</p>
+					<p>
+						The last image should give you decent idea of how functions work. You create an object with a series of object calls, then
+						you call that object, which results in all of its members being evaluated. Now we must move on to arguments/parameters.
+					</p>
+					<p>
+						Here is a simple function which takes a single number as an parameter and prints its following digit.
+						<figure>
+							<img src="/images/term7.png">
+							<figcaption>
+								The function <code>func</code> takes a single parameter x, then prints the result of x + 1.
+							</figcaption>
+						</figure>
+						Parameters work in kind of strange way. Whenever you create an object, in any scope, instead of creating an empty
+						object with the value of 0, the interpreter will first look if there are any parameters which need to be defined.
+						For example, in the code snippet above, when the function is called, it will create an object called x. Then,
+						when instantiating it, it will see that there is currently a single argument which is yet to be assigned to anything
+						(since we passed args to <code>func</code>), and it will then assign its value to x. So the first time we call
+						<code>func</code>, x will be assigned a value of 1, since that's the argument we gave the function. The last time
+						we call the function, we don't pass any arguments, so when x is created, it will simply be assigned a value of 0
+						by default. Note that this does mean that if you have some complex code with deep, multi-layered function calls,
+						omitting arguments may be problematic, assuming the functions don't deal with it themselves.
+					</p>
 				</td></tr>
 			</table>
 			<table class="navitem">
