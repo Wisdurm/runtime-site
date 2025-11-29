@@ -27,7 +27,7 @@
 				<br>
 				<a href="/public/getting_started.php">Getting started</a>
 				<br>
-				<a>Reference</a>
+				<a href="/public/reference.php">Reference</a>
 			</td>
 		</tr>
 	</table>
@@ -39,9 +39,9 @@
 		</tr>
 		<tr>
 			<td>
-				<a>Binaries</a>
+				<a href="/public/installation.php">Binaries</a>
 				<br>
-				<a>Source</a>
+				<a href="https://github.com/Wisdurm/Runtime/">Source</a>
 			</td>
 		</tr>
 	</table>

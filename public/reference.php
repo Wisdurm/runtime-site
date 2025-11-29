@@ -8,7 +8,7 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
-	<title>Index</title>
+	<title>Reference</title>
 </head>
 <body>
 	<table>
@@ -18,36 +18,45 @@
 			<a href="/public/index.php"><img src="../images/runtime.svg"></a>
 			<table class="navitem">
 				<tr><td>
-						About
+						Reference
 				</td></tr>
 				<tr><td>
-					<b>Runtime</b> is a questionably-evaluated, classless yet purely-object-oriented, interpreted programming language.
-					<br>
-					The language was developed as just a fun little project, made for fun and learning, rather than actually being useful.
-					<br>
-					Nontheless, I have made this site to serve as a hub for documentation related to Runtime, and also to pratice web development :P
+					<p>
+						This is a full reference of all objects in the standard libraries of Runtime
+					</p>
 				</td></tr>
 			</table>
-			<table class="navitem">
+			<?php
+			include "../src/ref.php";			
+			?>
+			<table class="navitem collapse">
 				<tr><td>
-						News
+						StandardLibrary
 				</td></tr>
 				<tr><td>
-					<dl>
-						<?php
-						include "../src/data.php";
-
-						$obj = json_decode($data);
-						foreach ($obj as $ob){
-							echo "<dt>";
-							echo "<a href='" . $ob->html_url . "'> Runtime " . $ob->tag_name . "</a> released";
-							echo "<small> [" . date('Y-m-d',strtotime($ob->created_at)) ."]</small>";
-							echo "</dt>";
-							echo "<dd>" . $ob->body . "</dd>";
-						}
-
-						?>
-						</dl>
+					<?php 
+						listData($stData)
+					?>					
+				</td></tr>
+			</table>
+			<table class="navitem collapse">
+				<tr><td>
+						StandardMath
+				</td></tr>
+				<tr><td>
+					<?php 
+						listData($mtData)
+					?>					
+				</td></tr>
+			</table>
+			<table class="navitem collapse">
+				<tr><td>
+						StandardIO
+				</td></tr>
+				<tr><td>
+					<?php 
+						listData($ioData)
+					?>					
 				</td></tr>
 			</table>
 		</td>
@@ -58,5 +67,7 @@
 		This page is licensed under the CC0-1.0 license. You are free to use the source code of this site however you want,
 		even without any attribution. The source code is available at <a href="https://github.com/Wisdurm/runtime-site">my Github</a>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+	<script src="../scripts/script.js"></script>
 </body>
 </html>

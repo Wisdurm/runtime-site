@@ -30,14 +30,13 @@
 						What?
 				</td></tr>
 				<tr><td>
-					As you know,
 					<b>Runtime</b> is a questionably-evaluated, classless yet purely-object-oriented, interpreted programming language.
 					What this means, is that everything is an object, <i> sort of </i>. You cannot create an int by itself, you must
 					create an object, that contains an int. Even so, you can still reference the pure int, which is why I'm a bit
 					hesitant to call this <em>truly</em> purely-object-oriented. But in the end it's really just semantics.<br>
 					I would like to say that this is just an oversimplification, and that the documentation contains a more comprehensive,
-					<b>true</b> explanation, but honestly this language ins't that complex, and the previous description really does
-					explain it.
+					<b>true</b> explanation, but honestly this language isn't really that complex, and the previous description does do
+					a good job of explaining it.
 				</td></tr>
 			</table>
 			<table class="navitem">

@@ -53,3 +53,27 @@ table.navitem tr:nth-child(1) {
 table.navitem tr:nth-child(2) {
 	background-color: wheat;
 }
+
+table.navitem tr:nth-child(1) a {
+	text-decoration: none;
+	color: white;
+}
+
+.function {
+	background-color: #ccaf7a;
+	padding-left: 1em;
+}
+
+.function p {
+	margin-top: 0.2em;
+}
+
+.version {
+	float: right;
+}
+
+.hide {
+	float: right;
+	font-size: large;
+	cursor: pointer;
+}

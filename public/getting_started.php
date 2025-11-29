@@ -18,7 +18,7 @@
 			will be able to find problems with it. If you notice something is awry, don't hesitate to create an issue on the runtime-site github page.
 			<table class="navitem">
 				<tr><td>
-						Getting started
+						<a href="#start" id="start">Getting started</a>
 				</td></tr>
 				<tr><td>
 					To get started, you should install Runtime. Links and instructions are available <a href="installation.php">here</a>.
@@ -39,7 +39,7 @@
 			</table>
 			<table class="navitem">
 				<tr><td>
-						Objects and values	
+						<a href="#objects" id="objects">Objects and values</a>
 				</td></tr>
 				<tr><td>
 					<p>
@@ -71,7 +71,7 @@
 			</table>
 			<table class="navitem">
 				<tr><td>
-						Members
+						<a href="#members" id="members">Members</a>
 				</td></tr>
 				<tr><td>
 					<p>
@@ -103,7 +103,7 @@
 			</table>
 			<table class="navitem">
 				<tr><td>
-						Creating and manipulating objects
+					<a href="#creating" id="creating">Creating and manipulating objects</a>
 				</td></tr>
 				<tr><td>
 					<p>
@@ -125,7 +125,7 @@
 			</table>
 			<table class="navitem">
 				<tr><td>
-						Evaluation
+						<a href="#evaluation" id="evaluation">Evaluation</a>
 				</td></tr>
 				<tr><td>
 					<p>
@@ -168,7 +168,7 @@ Print(i)
 			</table>
 			<table class="navitem">
 				<tr><td>
-						A quirk of evaluation
+						<a href="#quirk" id="quirk">A quirk of evaluation</a>
 				</td></tr>
 				<tr><td>
 					<p>
@@ -194,7 +194,7 @@ Print(i)
 			</table>
 			<table class="navitem">
 				<tr><td>
-						Functions
+						<a href="#functions" id="functions">Functions</a>
 				</td></tr>
 				<tr><td>
 					<p>
@@ -242,13 +242,13 @@ Print(i)
 								The function <code>func</code> takes a single parameter x, then prints the result of x + 1.
 							</figcaption>
 						</figure>
-						Parameters work in kind of strange way. Whenever you create an object, in any scope, instead of creating an empty
+						Parameters work in kind of strange way. Whenever you create an object instead of just always creating an empty
 						object with the value of 0, the interpreter will first look if there are any parameters which need to be defined.
 						For example, in the code snippet above, when the function is called, it will create an object called x. Then,
 						when instantiating it, it will see that there is currently a single argument which is yet to be assigned to anything
-						(since we passed args to <code>func</code>), and it will then assign its value to x. So the first time we call
-						<code>func</code>, x will be assigned a value of 1, since that's the argument we gave the function. The last time
-						we call the function, we don't pass any arguments, so when x is created, it will simply be assigned a value of 0
+						(since we passed args to <code>func</code>), and it will then assign its value to x. So the first time in the snippet
+						we call <code>func</code>, x will be assigned a value of 1, since that's the argument we gave the function. The last
+						time we call the function, we don't pass any arguments, so when x is created, it will simply be assigned a value of 0
 						by default. Note that this does mean that if you have some complex code with deep, multi-layered function calls,
 						omitting arguments may be problematic, assuming the functions don't deal with it themselves.
 					</p>
@@ -256,16 +256,94 @@ Print(i)
 			</table>
 			<table class="navitem">
 				<tr><td>
-						References and values
+						<a href="#ref" id="ref">References and values</a>
 				</td></tr>
 				<tr><td>
+					<p>
+						Objects are always passed by reference, and values are always passed by value.
+					</p>
+					<p>
+						<pre>
+Object(one, 1)
+Object(value, one-0) # Passed the value of one
+Object(reference, one) # Passed a reference to one
+Assign(one, 0, 2)
+Print(value) # Will print 1
+Print(reference) # Will print 2
+						</pre>
+						This is another case where the workings of evaluation will be prone to mess things up.
+					</p>
 				</td></tr>
 			</table>
 			<table class="navitem">
 				<tr><td>
-						Quick overview of standard library
+						<a href="#quick" id="quick">Quick overview of standard library</a>
 				</td></tr>
 				<tr><td>
+					<p>
+						Congratulations! You've made it to the end of the documentation. In theory, you should now be able to write functional
+						Runtime code, although in practice it will of course take some time before you're able to fully grasp the language.
+					</p>
+					<p>
+						This section will be a quick overview of some of the most useful functions that come with Runtime. A full reference of
+						all Runtime objects can be found <a href="reference.php">here</a>.
+					</p>
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Evaluates args</th>
+							<th>Returns</th>
+							<th>Function</th>
+						</tr>
+						<tr>
+							<td>Print</td>
+							<td>Yes</td>
+							<td>1</td>
+							<td>Prints all arguments to the standard output.</td>
+						</tr>
+						<tr>
+							<td>Input</td>
+							<td>No</td>
+							<td>Input</td>
+							<td>Returns a single line from the standard input.</td>
+						</tr>
+						<tr>
+							<td>Object</td>
+							<td>No</td>
+							<td>Success (1/0)</td>
+							<td>Adds members to object.</td>
+						</tr>
+						<tr>
+							<td>Assign</td>
+							<td>Yes</td>
+							<td>Success (1/0)</td>
+							<td>Assigns a member to a specific index on an object.</td>
+						</tr>
+						<tr>
+							<td>Include</td>
+							<td>Yes</td>
+							<td>Success (1/0)</td>
+							<td>Runs a Runtime file and includes its defined objects.</td>
+						</tr>
+						<tr>
+							<td>If</td>
+							<td>Yes</td>
+							<td>Statements or success (1/0)</td>
+							<td>Conditional statement.</td>
+						</tr>
+						<tr>
+							<td>While</td>
+							<td>Yes</td>
+							<td>Success (1/0)</td>
+							<td>Conditional loop.</td>
+						</tr>
+						<tr>
+							<td>Not</td>
+							<td>Yes</td>
+							<td>Inverted or 0 (fail)</td>
+							<td>Inverts a boolean.</td>
+						</tr>
+					</table>
 				</td></tr>
 			</table>
 		</td>
