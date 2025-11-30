@@ -34,6 +34,26 @@
 						StandardLibrary
 				</td></tr>
 				<tr><td>
+					<b>Objects</b>
+					<div class="object">
+						<strong>carg0-...</strong>
+						<span class="version">v.0.10.0</span>
+						<br>
+						<p>
+							Command line arguments:
+							<ul>
+								<li>carg0: always the Runtime executable.</li>
+							</ul>
+							<ul>
+								<li>carg1: always the Runtime script being run.</li>
+							</ul>
+							<ul>
+								<li>carg2...: the rest of the arguments supplied.</li>
+							</ul>
+						</p>
+					</div>
+					<br>
+					<b>Functions</b>
 					<?php 
 						listData($stData)
 					?>					
@@ -44,6 +64,7 @@
 						StandardMath
 				</td></tr>
 				<tr><td>
+					<b>Functions</b>
 					<?php 
 						listData($mtData)
 					?>					
@@ -54,6 +75,7 @@
 						StandardIO
 				</td></tr>
 				<tr><td>
+					<b>Functions</b>
 					<?php 
 						listData($ioData)
 					?>					

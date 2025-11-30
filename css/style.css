@@ -68,6 +68,15 @@ table.navitem tr:nth-child(1) a {
 	margin-top: 0.2em;
 }
 
+.object {
+	background-color: #ccaf7a;
+	padding-left: 1em;
+}
+
+.object p {
+	margin-top: 0.2em;
+}
+
 .version {
 	float: right;
 }
