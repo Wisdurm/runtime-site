@@ -462,6 +462,22 @@ $mtData = <<<JSON
 		],
 		"return" : "Result",
 		"desc" : "Returns the natural logarithm of value. This maps directly to the <a href='https://cplusplus.com/reference/cmath/log/'>C++ function.</a>"
+	},
+	{
+		"name" : "RandomInteger()",
+		"ver" : "0.10.0",
+		"args" : [
+		],
+		"return" : "Random integer",
+		"desc" : "Returns a random number between 0 and the integer limit."
+	},
+	{
+		"name" : "RandomDecimal()",
+		"ver" : "<0.10.0",
+		"args" : [
+		],
+		"return" : "Random decimal",
+		"desc" : "Returns a random number between 0 and 1."
 	}
 ]
 JSON;
