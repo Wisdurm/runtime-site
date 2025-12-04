@@ -473,7 +473,7 @@ $mtData = <<<JSON
 	},
 	{
 		"name" : "RandomDecimal()",
-		"ver" : "<0.10.0",
+		"ver" : "0.10.0",
 		"args" : [
 		],
 		"return" : "Random decimal",
