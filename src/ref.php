@@ -75,7 +75,7 @@ $stData = <<<JSON
 				"eval" : false
 			}
 		],
-		"return" : "Success (1/0)",
+		"return" : "Success (1) or exception",
 		"desc" : "Adds all members to object. Members are added via incrementing int keys."
 	},
 	{
@@ -95,7 +95,7 @@ $stData = <<<JSON
 				"eval" : true
 			}
 		],
-		"return" : "Success (1/0)",
+		"return" : "Success (1) or exception",
 		"desc" : "Assigns member to object at key."
 	},
 	{
@@ -119,7 +119,7 @@ $stData = <<<JSON
 				"eval" : true
 			}
 		],
-		"return" : "Success (1/0)",
+		"return" : "Success (1) or exception",
 		"desc" : "Runs a Runtime file, and adds its members to the current scope."
 	},
 	{
@@ -155,7 +155,7 @@ $stData = <<<JSON
 				"eval" : true
 			}
 		],
-		"return" : "Success (1/0)",
+		"return" : "Success (1) or exception",
 		"desc" : "Repeatedly evaluates a series of statements, as long as a conditional is true. Despite evaluation, the value of the conditional is not written down."
 	},
 	{
@@ -167,7 +167,7 @@ $stData = <<<JSON
 				"eval" : true
 			}
 		],
-		"return" : "Boolean (1/0) or fail (0)",
+		"return" : "Boolean (1/0) or exception",
 		"desc" : "Inverts the value of a boolean."
 	},
 	{
@@ -183,7 +183,7 @@ $stData = <<<JSON
 				"eval" : true
 			}
 		],
-		"return" : "Resulting string or failure (0)",
+		"return" : "Resulting string or exception",
 		"desc" : "String interpolation: characters can be escaped, and non-escaped instances of $ will be replaced with objects given to this function."
 	}
 ]
@@ -497,7 +497,7 @@ $ioData = <<<JSON
 				"eval" : true
 			}
 		],
-		"return" : "Success (1/0)",
+		"return" : "Success (1) or exception",
 		"desc" : "Creates a file object."
 	},
 	{
@@ -509,7 +509,7 @@ $ioData = <<<JSON
 				"eval" : false
 			}
 		],
-		"return" : "Success (1/0)",
+		"return" : "Success (1) or exception",
 		"desc" : "Opens file object."
 	},
 	{
@@ -521,11 +521,11 @@ $ioData = <<<JSON
 				"eval" : false
 			}
 		],
-		"return" : "Success (1/0)",
+		"return" : "Success (1) or exception",
 		"desc" : "Closes file object."
 	},
 	{
-		"name" : "FileRead",
+		"name" : "FileReadLine",
 		"ver" : "0.10.0",
 		"args" : [
 			{
@@ -533,7 +533,7 @@ $ioData = <<<JSON
 				"eval" : false
 			}
 		],
-		"return" : "Line or fail (0)",
+		"return" : "Line or exception",
 		"desc" : "Reads a single line from file object. The line will increment each time."
 	},
 	{
@@ -549,7 +549,7 @@ $ioData = <<<JSON
 				"eval" : true
 			}
 		],
-		"return" : "Success (1/0)",
+		"return" : "Success (1) or exception",
 		"desc" : "Writes text to file object."
 	}
 ]
