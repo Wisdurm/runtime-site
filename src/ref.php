@@ -534,7 +534,23 @@ $ioData = <<<JSON
 			}
 		],
 		"return" : "Line or exception",
-		"desc" : "Reads a single line from file object. The line will increment each time."
+		"desc" : "Reads a single line from file object."
+	},
+	{
+		"name" : "FileRead",
+		"ver" : "0.10.0",
+		"args" : [
+			{
+				"name" : "file object",
+				"eval" : false
+			},
+			{
+				"name" : "data amount",
+				"eval" : true
+			}
+		],
+		"return" : "Data or exception",
+		"desc" : "Reads a specified amount of data from file object."
 	},
 	{
 		"name" : "FileWrite",
@@ -551,6 +567,22 @@ $ioData = <<<JSON
 		],
 		"return" : "Success (1) or exception",
 		"desc" : "Writes text to file object."
+	},
+	{
+		"name" : "FileAppendLine",
+		"ver" : "0.10.0",
+		"args" : [
+			{
+				"name" : "file object",
+				"eval" : false
+			},
+			{
+				"name" : "text",
+				"eval" : true
+			}
+		],
+		"return" : "Success (1) or exception",
+		"desc" : "Writes text to the end of file object."
 	}
 ]
 JSON;

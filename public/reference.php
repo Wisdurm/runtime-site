@@ -75,6 +75,30 @@
 						StandardIO
 				</td></tr>
 				<tr><td>
+					<b>Objects</b>
+					<div class="object">
+						<strong>file</strong>
+						<span class="version">v.0.10.0</span>
+						<br>
+						<p>
+							Members
+							<ul>
+								<li>
+									<strong>path</strong>
+									<p>The path of the file</p>
+								</li>
+								<li>
+									<strong>open</strong>
+									<p>Whether or not the site is open</p>
+								</li>
+								<li>
+									<strong>pointer</strong>
+									<p>The location of the read/write pointer</p>
+								</li>
+							</ul>
+						</p>
+					</div>
+
 					<b>Functions</b>
 					<?php 
 						listData($ioData)
