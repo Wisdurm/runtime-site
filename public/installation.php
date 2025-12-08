@@ -24,12 +24,13 @@
 					<strong>
 							Runtime is currently in pre-release, which means any code you write is not quaranteed to work in later versions.
 					</strong><br>
-					You can download the latest version of Runtime here:
-					<ul>
-						<?php
+					You can download the latest version of Runtime here: <br>
+					<?php
 						// Get data
 						include "../src/data.php";
 						$obj = json_decode($data);
+						// Version
+						echo "<small>The current release is: <strong>" . $obj[0]->tag_name . "</strong></small>";
 						// Map github file types to human readable (pretty) names
 						$r_names = [
 							"application/vnd.debian.binary-package" => "Debian package (deb)",
@@ -37,15 +38,16 @@
 							"application/x-compress" => "Linux (tar-Z)",
 						];
 						// Get download links from newest release
+						echo "<ul>";
 						foreach ($obj[0]->assets as $asset) {
 							$link = $asset->browser_download_url;
 							echo "<li>";
 							echo "<a href='" . $link . "'>" . $r_names[$asset->content_type] . "</a>";
 							echo "</li>";
 						}
+						echo "</ul>";
 					?>
-					</ul>
-					As it is a relatively simple project, Runtime requires no dependencies. <br>
+					The only depency Runtime requires is the GNU readline library, which you probably already have installed anyway. <br>
 					After installation is complete, you should start looking at <a href="getting_started.php">getting started</a>.
 				</td></tr>
 			</table>
